@@ -350,16 +350,17 @@ public class Mem extends JFrame {
 							JOptionPane.showMessageDialog(new JFrame(), "Answer matches original string! " + "(" + single_string + ")" + "\ntotal times correct = " + t_correct + "\ntotal times wrong = " + t_wrong,  "Correct",	 JOptionPane.PLAIN_MESSAGE);
 						}else {
 							//accuracy score calculation
+							String test = textField.getText();
 							double score = 0;
 							double ct = 0;
-							for(int i = 0; i < single_string.length(); i++) {
-								if(textField.getText().charAt(i) == single_string.charAt(i)) {
+							for(int i = 0; i < test.length(); i++) {
+								if(test.charAt(i) == single_string.charAt(i)) {
 									System.out.println("char found correct");
 									ct++;
 								}
 							}
 							
-							score = (ct / textField.getText().length()) * 100;
+							score = (ct / single_string.length()) * 100;
 							
 							//System.out.println("score = " + score);
 							//System.out.println("correct points = " + ct);
